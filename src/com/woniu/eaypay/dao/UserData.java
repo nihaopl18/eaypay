@@ -1,78 +1,87 @@
 package com.woniu.eaypay.dao;
 
 public class UserData {
+	public static final int normal=1;
+	public static final int admin=2;
 
-	private int      eu_user_id ;
-	private String   eu_user_name ;
-	private String   eu_password ;
-	private String   eu_sex ;
-	private String   eu_birthday ;
-	private String   eu_identity_code;
-	private String   eu_email  ;
-	private String   eu_mobile ;
-	private String   eu_address  ;
-	private int      eu_status  ;
+	private int     id ;
+	private String   userName ;
+	private String   passWord ;
+	private char     sex ;
+	private String   birthday ;
+	private String   identity_code;
+	private String   email  ;
+	private String   mobile ;
+	private String   address  ;
+	private int      status  ;//用户类型 1普通用户 2管理员
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getPassWord() {
+		return passWord;
+	}
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
+	}
+	public char getSex() {
+		return sex;
+	}
+	public void setSex(char sex) {
+		this.sex = sex;
+	}
+	public String getBirthday() {
+		return birthday;
+	}
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+	public String getIdentity_code() {
+		return identity_code;
+	}
+	public void setIdentity_code(String identity_code) {
+		this.identity_code = identity_code;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getMobile() {
+		return mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
 	
-	public int getEu_user_id() {
-		return eu_user_id;
+	@Override
+	public String toString() {
+		return "UserData [id=" + id + ", userName=" + userName + ", passWord="
+				+ passWord + ", sex=" + sex + ", birthday=" + birthday
+				+ ", identity_code=" + identity_code + ", email=" + email
+				+ ", mobile=" + mobile + ", address=" + address + ", status="
+				+ status + "]";
 	}
-	public void setEu_user_id(int eu_user_id) {
-		this.eu_user_id = eu_user_id;
-	}
-	public String getEu_user_name() {
-		return eu_user_name;
-	}
-	public void setEu_user_name(String eu_user_name) {
-		this.eu_user_name = eu_user_name;
-	}
-	public String getEu_password() {
-		return eu_password;
-	}
-	public void setEu_password(String eu_password) {
-		this.eu_password = eu_password;
-	}
-	public String getEu_sex() {
-		return eu_sex;
-	}
-	public void setEu_sex(String eu_sex) {
-		this.eu_sex = eu_sex;
-	}
-	public String getEu_birthday() {
-		return eu_birthday;
-	}
-	public void setEu_birthday(String eu_birthday) {
-		this.eu_birthday = eu_birthday;
-	}
-	public String getEu_identity_code() {
-		return eu_identity_code;
-	}
-	public void setEu_identity_code(String eu_identity_code) {
-		this.eu_identity_code = eu_identity_code;
-	}
-	public String getEu_email() {
-		return eu_email;
-	}
-	public void setEu_email(String eu_email) {
-		this.eu_email = eu_email;
-	}
-	public String getEu_mobile() {
-		return eu_mobile;
-	}
-	public void setEu_mobile(String eu_mobile) {
-		this.eu_mobile = eu_mobile;
-	}
-	public String getEu_address() {
-		return eu_address;
-	}
-	public void setEu_address(String eu_address) {
-		this.eu_address = eu_address;
-	}
-	public int getEu_status() {
-		return eu_status;
-	}
-	public void setEu_status(int eu_status) {
-		this.eu_status = eu_status;
-	}
-	
-	
+
 }                                  

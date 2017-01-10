@@ -4,5 +4,26 @@
   <welcome-file-list>
    
     <welcome-file>shopping.jsp</welcome-file>
+    <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+  	<servlet-name>ShopServlet</servlet-name>
+  	<servlet-class>com.woniu.eaypay.servlet.ShopServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ShopServlet</servlet-name>
+  	<url-pattern>/ShopServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>UserServlet</servlet-name>
+  	<servlet-class>com.woniu.eaypay.servlet.UserServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>UserServlet</servlet-name>
+  	<url-pattern>/UserServlet</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
