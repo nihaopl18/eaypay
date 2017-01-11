@@ -51,6 +51,7 @@
 		<div class="box">
 			<h1>欢迎回到易买网</h1>
 			<form id="loginForm" method="post" action="UserServlet" onsubmit="return checkForm(this)">
+			<input type="hidden" name="sign" value="login">
 				<table>
 					<tr>
 						<td class="field">用户名：</td>

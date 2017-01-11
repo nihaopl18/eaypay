@@ -12,9 +12,20 @@ public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void service(HttpServletRequest request, HttpServletResponse response)
+	protected void service(HttpServletRequest request, HttpServletResponse respone)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/manage/index.jsp").forward(request, response);
+		String sign = request.getParameter("sign");
+		if("login".equals(sign)){
+			request.getRequestDispatcher("WEB-INF/manage/index.jsp").forward(request,respone);
+		}else if("user".equals(sign)){
+			request.getRequestDispatcher("WEB-INF/manage/user.jsp").forward(request,respone);
+		}else if(sign==null){
+			request.getRequestDispatcher("WEB-INF/manage/index.jsp").forward(request,respone);
+		}
+//			request.getRequestDispatcher("WEB-INF/manage/index.jsp").forward(request, response);
+	
+	
+	
 	}
 	
 }
