@@ -15,6 +15,7 @@ public class UserServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.getRequestDispatcher("WEB-INF/manage/index.jsp").forward(request, response);
+	// 124321432432
 	}
 	
 }
