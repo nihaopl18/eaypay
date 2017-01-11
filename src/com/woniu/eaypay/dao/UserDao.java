@@ -9,7 +9,7 @@ import com.woniu.eaypay.util.DbUtil;
 public class UserDao {
 
 	/**
-	 * 验证用户登录
+	 * 验证用户登录lalalalalal
 	 * */
 	public UserData validateUserInfo(String userName,String password){
 		
