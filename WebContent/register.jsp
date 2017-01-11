@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -49,9 +49,12 @@
 		<em class="corner lb"></em>
 		<em class="corner rt"></em>
 		<div class="box">
-			<h1>欢迎回到易买网</h1>
-			<form id="loginForm" method="post" action="UserServlet" onsubmit="return checkForm(this)">
-			<input type="hidden" name="sign" value="login">
+			<h1>欢迎注册易买网</h1>
+			<ul class="steps clearfix">
+				<li class="current"><em></em>填写注册信息</li>
+				<li class="last"><em></em>注册成功</li>
+			</ul>
+			<form id="regForm" method="post" action="reg-result.html" onsubmit="return checkForm(this);">
 				<table>
 					<tr>
 						<td class="field">用户名：</td>
@@ -62,12 +65,16 @@
 						<td><input class="text" type="password" id="passWord" name="passWord" onfocus="FocusItem(this)" onblur="CheckItem(this);" /><span></span></td>
 					</tr>
 					<tr>
+						<td class="field">确认密码：</td>
+						<td><input class="text" type="password" name="rePassWord" onfocus="FocusItem(this)" onblur="CheckItem(this);" /><span></span></td>
+					</tr>
+					<tr>
 						<td class="field">验证码：</td>
 						<td><input class="text verycode" type="text" name="veryCode" onfocus="FocusItem(this)" onblur="CheckItem(this);" /><img id="veryCode" src="" /><span></span></td>
 					</tr>
 					<tr>
 						<td></td>
-						<td><label class="ui-green"><input type="submit" name="submit" value="立即登录" /></label></td>
+						<td><label class="ui-green"><input type="submit" name="submit" value="提交注册" /></label></td>
 					</tr>
 				</table>
 			</form>
@@ -76,7 +83,7 @@
 	<div class="clear"></div>
 </div>
 <div id="footer">
-	Copyright &copy; 2017 蜗牛学院 All Rights Reserved. 京ICP证1000001号
+	Copyright &copy; 2017  蜗牛学院 All Rights Reserved. 京ICP证1000001号
 </div>
 </body>
 </html>

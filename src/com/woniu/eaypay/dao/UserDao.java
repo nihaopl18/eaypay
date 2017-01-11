@@ -9,24 +9,24 @@ import com.woniu.eaypay.util.DbUtil;
 public class UserDao {
 
 	/**
-	 * 验证用户登录
+	 * 验证用户登录lalalalalal
 	 * */
 	public UserData validateUserInfo(String userName,String password){
 		
-		Connection connection = DbUtil.getConnection();
+		Connection connection = DbUtil.getConnection();//得到数据库连接对象
 		if(connection !=null){
 			PreparedStatement statement=null;
-			ResultSet resultSet=null;
-			String sql="select * from easybuy_user where eu_user_name=? and eu_password=?";
+			ResultSet resultSet=null;//结果集
+			String sql="SELECT * from easybuy_user where eu_password=? and eu_user_name=? ";
 			try {
 				statement=connection.prepareStatement(sql);
-				//绑定数据
+				//有？绑定数据
 				statement.setString(1, userName);
 				statement.setString(2, password);
-				resultSet=statement.executeQuery(sql);
+				resultSet=statement.executeQuery();
 				//处理结果集			
 				UserData user = null;
-				if(resultSet.first()){
+				if(resultSet.first()){//这里我们只要一条
 					
 					user=new UserData();
 					user.setUserName(resultSet.getString("eu_user_name"));
@@ -34,6 +34,7 @@ public class UserDao {
 					user.setAddress(resultSet.getString("eu_address"));
 					
 				}
+				return user;//不走这个if(){}它还是为null
 			} catch (SQLException e) {
 				
 				e.printStackTrace();
