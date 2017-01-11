@@ -16,6 +16,6 @@ public class UserServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.getRequestDispatcher("WEB-INF/manage/index.jsp").forward(request, response);
 	}
-	//лМ╪св╒ймакц╩спя╫я╫я╫я╫я╫я╫я╫я╫я╫я╫я╫я╫я╫я╫я╫
+	//лМ╪св╒ймакц╩спя╫я╫я╫я╫я╫я╫я╫я╫я╫я╫я╫я╫я╫я╫я╫я╫я╫я╫
 	
 }
