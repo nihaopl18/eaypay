@@ -22,6 +22,7 @@ public class UserServlet extends HttpServlet {
 		}else if(sign==null){
 			request.getRequestDispatcher("WEB-INF/manage/index.jsp").forward(request,respone);
 		}
+		//request.
 //			request.getRequestDispatcher("WEB-INF/manage/index.jsp").forward(request, response);
 	
 	
