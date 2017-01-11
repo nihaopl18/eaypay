@@ -13,7 +13,7 @@ public class UserData {
 	private String   email  ;
 	private String   mobile ;
 	private String   address  ;
-	private int      status  ;//用户类型 1普通用户 2管理员
+	private int      status  ;//用户类型 1普通用户 2管理员干啥子喔
 	public int getId() {
 		return id;
 	}
