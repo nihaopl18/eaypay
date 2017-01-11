@@ -14,6 +14,7 @@ public class UserServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse respone)
 			throws ServletException, IOException {
+<<<<<<< HEAD
 		String sign = request.getParameter("sign");
 		if("login".equals(sign)){
 			request.getRequestDispatcher("WEB-INF/manage/index.jsp").forward(request,respone);
@@ -27,6 +28,10 @@ public class UserServlet extends HttpServlet {
 	
 	
 	
+=======
+		request.getRequestDispatcher("WEB-INF/manage/index.jsp").forward(request, response);
+	// 124321432432
+>>>>>>> 22c2430fda7bd63714db32a5c10c2480ddd87232
 	}
 	
 }

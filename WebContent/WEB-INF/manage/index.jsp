@@ -1,10 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+=======
+<!DOCTYPE html >
+<html>
+>>>>>>> 22c2430fda7bd63714db32a5c10c2480ddd87232
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>后台管理 - 易买网</title>
@@ -13,7 +18,11 @@
 </head>
 <body>
 <div id="header" class="wrap">
+<<<<<<< HEAD
 	<div id="logo"><img src="${pageContext.request.contextPath }/images/logo.gif" /></div>
+=======
+	<div id="logo"><img src="${pageContext.request.contextPath}/images/logo.gif" /></div>
+>>>>>>> 22c2430fda7bd63714db32a5c10c2480ddd87232
 	<div class="help"><a href="${pageContext.request.contextPath }/index.html">返回前台页面</a></div>
 	<div class="navbar">
 		<ul class="clearfix">
