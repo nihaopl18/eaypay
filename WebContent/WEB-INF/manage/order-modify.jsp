@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,17 +10,14 @@
 </head>
 <body>
 <div id="header" class="wrap">
-	<div id="logo"><img src="${pageContext.request.contextPath}/images/logo.gif" /></div>
-
+	<div id="logo"><img src="${pageContext.request.contextPath }/images/logo.gif" /></div>
 	<div class="help"><a href="${pageContext.request.contextPath }/index.html">返回前台页面</a></div>
 	<div class="navbar">
 		<ul class="clearfix">
-			<li class="current"><a href="UserServlet">首页</a></li>
+			<li><a href="index.html">首页</a></li>
 			<li><a href="UserServlet?method=user">用户</a></li>
-			<!--这里本来是user.jsp,但user.jsp网页它在web-inf文件中不能通过浏览器浏览只能通过request跳转  
-			    所以这里用UserServlet?(携带参数method=user)跳转-->
 			<li><a href="product.html">商品</a></li>
-			<li><a href="UserServlet?method=order">订单</a></li>
+			<li class="current"><a href="UserServlet?method=order">订单</a></li>
 			<li><a href="guestbook.html">留言</a></li>
 			<li><a href="news.html">新闻</a></li>
 		</ul>
@@ -54,23 +50,34 @@
 		</div>
 	</div>
 	<div class="main">
-		<h2>管理首页</h2>
-		<div id="welcome" class="manage">
-			<div class="shadow">
-				<em class="corner lb"></em>
-				<em class="corner rt"></em>
-				<div class="box">
-					<div class="msg">
-						<p>欢迎回来</p>
-					</div>
-				</div>
-			</div>
+		<h2>修改订单</h2>
+		<div class="manage">
+			<form action="manage-result.html">
+				<table class="form">
+					<tr>
+						<td class="field">订单ID：</td>
+						<td><input type="text" class="text" name="orderId" value="100000" readonly="readonly" /></td>
+					</tr>
+					<tr>
+						<td class="field">订购人姓名：</td>
+						<td><input type="text" class="text" name="name" value="张三" /></td>
+					</tr>
+					<tr>
+						<td class="field">...：</td>
+						<td>...</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><label class="ui-blue"><input type="submit" name="submit" value="更新" /></label></td>
+					</tr>
+				</table>
+			</form>
 		</div>
 	</div>
 	<div class="clear"></div>
 </div>
 <div id="footer">
-	Copyright &copy; 2017 蜗牛学院   All Rights Reserved. 京ICP证1000001号
+	Copyright &copy; 2010 北大青鸟 All Rights Reserved. 京ICP证1000001号
 </div>
 </body>
 </html>

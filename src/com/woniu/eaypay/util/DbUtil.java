@@ -8,9 +8,12 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 import org.apache.commons.dbcp.BasicDataSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DbUtil {
 	
+	private static Logger logger=LoggerFactory.getLogger(DbUtil.class);
 	private static BasicDataSource dataSource;
 	
 	static {//静态代码块先于getConnection()方法运行,
@@ -37,7 +40,9 @@ public class DbUtil {
 			dataSource.setMaxActive(20);
 			dataSource.setMaxIdle(60);
 			dataSource.setMaxWait(6000);
+			logger.debug("数据源初始化成功");
 		} catch (Exception e) {
+			logger.debug("数据源初始化失败");
 			e.printStackTrace();
 		}
 		

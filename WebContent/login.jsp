@@ -1,16 +1,17 @@
 <%@ page language="java" contentType="text/html; UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    
 <!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>易买网 - 首页</title>
-<link type="text/css" rel="stylesheet" href="css/style.css" />
-<script type="text/javascript" src="scripts/function.js"></script>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/css/style.css" />
+<script type="text/javascript" src="${pageContext.request.contextPath }/scripts/function.js"></script>
 </head>
 <body>
 <div id="header" class="wrap">
-	<div id="logo"><img src="images/logo.gif" /></div>
+	<div id="logo"><img src="${pageContext.request.contextPath }/images/logo.gif" /></div>
 	<div class="help"><a href="#" class="shopping">购物车</a><a href="login.html">登录</a><a href="register.html">注册</a><a href="guestbook.html">留言</a></div>
 	<div class="navbar">
 		<ul class="clearfix">
@@ -51,7 +52,7 @@
 		<div class="box">
 			<h1>欢迎回到易买网</h1>
 			<form id="loginForm" method="post" action="UserServlet" onsubmit="return checkForm(this)">
-			<input type="hidden" name="sign" value="login">
+				<input type="hidden" name="method" value="login">
 				<table>
 					<tr>
 						<td class="field">用户名：</td>
@@ -76,7 +77,7 @@
 	<div class="clear"></div>
 </div>
 <div id="footer">
-	Copyright &copy; 2017 蜗牛学院 All Rights Reserved. 京ICP证1000001号
+	Copyright &copy; 2010 北大青鸟 All Rights Reserved. 京ICP证1000001号
 </div>
 </body>
 </html>
