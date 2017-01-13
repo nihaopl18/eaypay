@@ -1,5 +1,7 @@
 package com.woniu.eaypay.dao;
 
+import java.util.Date;
+
 public class UserData {
 	public static final int normal=1;
 	public static final int admin=2;
@@ -8,7 +10,7 @@ public class UserData {
 	private String   userName ;
 	private String   passWord ;
 	private char     sex ;
-	private String   birthday ;
+	private Date   birthday ;
 	private String   identity_code;
 	private String   email  ;
 	private String   mobile ;
@@ -38,10 +40,11 @@ public class UserData {
 	public void setSex(char sex) {
 		this.sex = sex;
 	}
-	public String getBirthday() {
+	
+	public Date getBirthday() {
 		return birthday;
 	}
-	public void setBirthday(String birthday) {
+	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
 	public String getIdentity_code() {
