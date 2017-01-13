@@ -1,11 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>后台管理 - 易买网</title>
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/css/style.css" />
+<script type="text/javascript" src="${pageContext.request.contextPath }/scripts/My97DatePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/scripts/function-manage.js"></script>
 </head>
 <body>
@@ -50,54 +51,57 @@
 		</div>
 	</div>
 	<div class="main">
-		<h2>订单管理</h2>
+		<h2>新增用户</h2>
 		<div class="manage">
-			<div class="search">
-				<form method="get">
-					订单号：<input type="text" class="text" name="orderId" /> 订货人：<input type="text" class="text" name="userName" /> <label class="ui-blue"><input type="submit" name="submit" value="查询" /></label>
-				</form>
-			</div>
-			<div class="spacer"></div>
-			<table class="list">
-				<tr>
-					<th>ID</th>
-					<th>姓名</th>
-					<th>发货地址</th>
-					<th>状态</th>
-					<th>操作</th>
-				</tr>
-				<tr>
-					<td class="first w4 c">1</td>
-					<td class="w1 c">张三丰</td>
-					<td>高老庄</td>
-					<td class="w1 c">发货</td>
-					<td class="w1 c"><a href="UserServlet?method=order-modify">修改</a> <a href="javascript:Delete(1);">删除</a></td>
-				</tr>
-				<tr>
-					<td class="first w4 c">1</td>
-					<td class="w1 c">张三丰</td>
-					<td>花果山</td>
-					<td class="w1 c">审核通过</td>
-					<td class="w1 c"><a href="order-modify.html">修改</a> <a href="javascript:Delete(1);">删除</a></td>
-				</tr>
-			</table>
-			<div class="pager">
-				<ul class="clearfix">
-					<li><a href="#">上一页</a></li>
-					<li class="current">1</li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li><a href="#">下一页</a></li>
-				</ul>
-			</div>
+			<form action="UserServlet" method="post">
+			<input type="hidden" name="method" value="save">
+				<table class="form" >
+					<tr>
+						<td class="field">用户名：</td>
+						<td><input type="text" class="text" name="userName" value="" /></td>
+					</tr>
+					<tr>
+						<td class="field">姓名：</td>
+						<td><input type="text" class="text" name="name" value="" /></td>
+					</tr>
+					<tr>
+						<td class="field">密码：</td>
+						<td><input type="text" class="text" name="passWord" value="" /></td>
+					</tr>
+					<tr>
+						<td class="field">性别：</td>
+						<td><input type="radio" name="sex" value="1" checked="checked" />男 <input type="radio" name="sex" value="1" />女</td>
+					</tr>
+					<tr>
+						<td class="field">出生日期：</td>
+						<td>
+							<input class="Wdate" type="text" name="birthday" onClick="WdatePicker()">
+						</td>
+					</tr>
+					<tr>
+						<td class="field">手机号码：</td>
+						<td><input type="text" class="text" name="mobile" value="" /></td>
+					</tr>
+					<tr>
+						<td class="field">送货地址：</td>
+						<td><input type="text" class="text" name="address" value="" /></td>
+					</tr>
+					<tr>
+						<td class="field">头像：</td>
+						<td><input type="file" class="text" name="photo" /></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><label class="ui-blue"><input type="submit" name="submit" value="添加" /></label></td>
+					</tr>
+				</table>
+			</form>
 		</div>
 	</div>
 	<div class="clear"></div>
 </div>
 <div id="footer">
-	Copyright &copy; 2017  蜗牛学院  All Rights Reserved. 京ICP证1000001号
+	Copyright &copy; 2010 北大青鸟 All Rights Reserved. 京ICP证1000001号
 </div>
 </body>
 </html>

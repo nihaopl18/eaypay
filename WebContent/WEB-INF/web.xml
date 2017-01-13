@@ -5,10 +5,29 @@
   	<servlet-class>com.woniu.eaypay.servlet.ShopServlet</servlet-class>
   </servlet>
   
-  <servlet-mapping>
-  	<servlet-name>ShopServlet</servlet-name>
-  	<url-pattern>/ShopServlet</url-pattern>
-  </servlet-mapping>
+  <filter>
+  	<filter-name>CharacterEncodingFilter</filter-name>
+  	<filter-class>com.woniu.eaypay.filter.CharacterEncodingFilter</filter-class>
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>UTF-8</param-value>
+  	</init-param>
+
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>CharacterEncodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>Rightfilter</filter-name>
+  	<filter-class>com.woniu.eaypay.filter.Rightfilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>Rightfilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
   
   <servlet>
   	<servlet-name>UserServlet</servlet-name>

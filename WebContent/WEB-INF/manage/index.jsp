@@ -14,10 +14,12 @@
 	<div class="help"><a href="${pageContext.request.contextPath }/index.html">返回前台页面</a></div>
 	<div class="navbar">
 		<ul class="clearfix">
-			<li class="current"><a href="index.html">首页</a></li>
-			<li><a href="shopping.jsp">用户</a></li>
+			<li class="current"><a href="UserServlet">首页</a></li>
+			<li><a href="UserServlet?method=user">用户</a></li>
+			<!--这里本来是user.jsp,但user.jsp网页它在web-inf文件中不能通过浏览器浏览只能通过request跳转  
+			    所以这里用UserServlet?(携带参数method=user)跳转-->
 			<li><a href="product.html">商品</a></li>
-			<li><a href="OrderServlet?method=Order">订单</a></li>
+			<li><a href="UserServlet?method=order">订单</a></li>
 			<li><a href="guestbook.html">留言</a></li>
 			<li><a href="news.html">新闻</a></li>
 		</ul>
@@ -25,7 +27,7 @@
 </div>
 <div id="childNav">
 	<div class="welcome wrap">
-		管理员pillys您好，今天是2012-12-21，欢迎回到管理后台。
+		管理员[${sessionScope.loginUser.userName }]您好，今天是2012-12-21，欢迎回到管理后台。
 	</div>
 </div>
 <div id="position" class="wrap">
@@ -66,7 +68,7 @@
 	<div class="clear"></div>
 </div>
 <div id="footer">
-	Copyright &copy; 2017 蜗牛学院 All Rights Reserved. 京ICP证1000001号
+	Copyright &copy; 2017 蜗牛学院   All Rights Reserved. 京ICP证1000001号
 </div>
 </body>
 </html>

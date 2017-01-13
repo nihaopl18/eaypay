@@ -1,9 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html >
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>后台管理 - 易买网</title>
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/css/style.css" />
 <script type="text/javascript" src="${pageContext.request.contextPath }/scripts/function-manage.js"></script>
@@ -15,9 +16,9 @@
 	<div class="navbar">
 		<ul class="clearfix">
 			<li><a href="UserServlet">首页</a></li>
-			<li><a href="UserServlet?method=user">用户</a></li>
+			<li class="current"><a href="UserServlet?method=user">用户</a></li>
 			<li><a href="product.html">商品</a></li>
-			<li class="current"><a href="UserServlet?method=order">订单</a></li>
+			<li><a href="UserServlet?method=order">订单</a></li>
 			<li><a href="guestbook.html">留言</a></li>
 			<li><a href="news.html">新闻</a></li>
 		</ul>
@@ -50,54 +51,39 @@
 		</div>
 	</div>
 	<div class="main">
-		<h2>订单管理</h2>
+		<h2>用户管理</h2>
 		<div class="manage">
-			<div class="search">
-				<form method="get">
-					订单号：<input type="text" class="text" name="orderId" /> 订货人：<input type="text" class="text" name="userName" /> <label class="ui-blue"><input type="submit" name="submit" value="查询" /></label>
-				</form>
-			</div>
-			<div class="spacer"></div>
 			<table class="list">
 				<tr>
 					<th>ID</th>
 					<th>姓名</th>
-					<th>发货地址</th>
-					<th>状态</th>
+					<th>性别</th>
+					<th>Email</th>
+					<th>手机</th>
 					<th>操作</th>
 				</tr>
-				<tr>
-					<td class="first w4 c">1</td>
-					<td class="w1 c">张三丰</td>
-					<td>高老庄</td>
-					<td class="w1 c">发货</td>
-					<td class="w1 c"><a href="UserServlet?method=order-modify">修改</a> <a href="javascript:Delete(1);">删除</a></td>
-				</tr>
-				<tr>
-					<td class="first w4 c">1</td>
-					<td class="w1 c">张三丰</td>
-					<td>花果山</td>
-					<td class="w1 c">审核通过</td>
-					<td class="w1 c"><a href="order-modify.html">修改</a> <a href="javascript:Delete(1);">删除</a></td>
-				</tr>
+				<c:if test="${not empty requestScope.users }">
+					<c:forEach items="${requestScope.users }" var="user" varStatus="status"> 
+						<tr>
+							<td class="first w4 c">${status.count }</td>
+							<td class="w1 c">${user.userName }</td>
+							<td class="w2 c">${user.sex eq '1'?'男':'女'}</td>
+							<td>${user.email }</td>
+							<td class="w4 c">${user.mobile }</td>
+							<td class="w1 c"><a href="UserServlet?method=modify&id=${user.id }">修改</a> 
+											<a href="UserServlet?method=delete&id=${user.id }" onclick="return window.confirm('是否确认删除该数据')">删除</a></td>
+																				<!-- 这个id是从var="user"中得到的id -->
+						</tr>
+					</c:forEach>
+				</c:if>
+				
 			</table>
-			<div class="pager">
-				<ul class="clearfix">
-					<li><a href="#">上一页</a></li>
-					<li class="current">1</li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li><a href="#">下一页</a></li>
-				</ul>
-			</div>
 		</div>
 	</div>
 	<div class="clear"></div>
 </div>
 <div id="footer">
-	Copyright &copy; 2017  蜗牛学院  All Rights Reserved. 京ICP证1000001号
+	Copyright &copy; 2017 蜗牛学院  All Rights Reserved. 京ICP证1000001号
 </div>
 </body>
 </html>
